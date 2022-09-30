@@ -12,7 +12,7 @@ router.post('/tasks',auth , async (req, res) => {
              owner: req.user._id
             });
         await task.save();
-        res.send(task);
+        res.status(201).send(task);
     } catch (e) {
         res.status(400).send('something went');
     }
